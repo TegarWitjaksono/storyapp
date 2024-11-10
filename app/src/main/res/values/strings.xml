@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">StoryApp</string>
+    <string name="app_name">Cat Ease</string>
     <string name="signup">Daftar</string>
     <string name="login">Masuk</string>
-    <string name="message_welcome_page">Mau cerita? keluh kesah? cape? Dicoding Story saja!</string>
-    <string name="title_welcome_page">Selamat datang di Dicoding Story!</string>
+    <string name="message_welcome_page">Aplikasi Ramah Kucing</string>
+    <string name="title_welcome_page">Hello, welcome to Cat Ease</string>
     <string name="title_signup_page">Lengkapi data dirimu di bawah ini ya</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
