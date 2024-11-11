@@ -26,7 +26,7 @@ class CustomEditText @JvmOverloads constructor(
                 val parent = parent.parent
                 if (parent is TextInputLayout) {
                     if (s.toString().length < 8) {
-                        parent.error = "Password tidak boleh kurang dari 8 karakter"
+                        parent.error = "Password cannot be less than 8 characters"
                         background = AppCompatResources.getDrawable(context, R.drawable.rounded_button_red) // Set red border
                     } else {
                         parent.error = null
