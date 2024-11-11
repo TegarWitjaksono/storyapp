@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Cat Ease</string>
-    <string name="signup">Daftar</string>
-    <string name="login">Masuk</string>
+    <string name="signup">SignUp</string>
+    <string name="login">Login</string>
     <string name="message_welcome_page">Aplikasi Ramah Kucing</string>
     <string name="title_welcome_page">Hello, welcome to Cat Ease</string>
     <string name="title_signup_page">Lengkapi data dirimu di bawah ini ya</string>
