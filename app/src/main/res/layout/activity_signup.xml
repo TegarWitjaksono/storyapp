@@ -16,7 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:srcCompat="@drawable/image_signup" />
+        app:srcCompat="@drawable/img_3"
+        android:contentDescription="@string/signup"/>
 
     <TextView
         android:id="@+id/titleTextView"
@@ -62,6 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:background="@drawable/rounded_button"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -93,6 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:background="@drawable/rounded_button"
             android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 

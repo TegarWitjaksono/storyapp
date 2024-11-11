@@ -4,16 +4,16 @@
     <string name="login">Login</string>
     <string name="message_welcome_page">Aplikasi Ramah Kucing</string>
     <string name="title_welcome_page">Hello, welcome to Cat Ease</string>
-    <string name="title_signup_page">Lengkapi data dirimu di bawah ini ya</string>
+    <string name="title_signup_page">Please complete the registration form below.</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="message_login_page">Fill out your information to get started.</string>
     <string name="title_login_page">Explore the cat world with us.</string>
-    <string name="name">Nama</string>
+    <string name="name">Name</string>
     <string name="message_main_page">Selamat Berkeluh Kesah di Dicoding Story.</string>
-    <string name="greeting">Halo %1$s,</string>
-    <string name="logout">Keluar</string>
+    <string name="greeting">Hello %1$s,</string>
+    <string name="logout">Logout</string>
     <string name="title_activity_maps">MapsActivity</string>
-    <string name="retry">Coba lagi</string>
+    <string name="retry">Retry</string>
 
 </resources>
