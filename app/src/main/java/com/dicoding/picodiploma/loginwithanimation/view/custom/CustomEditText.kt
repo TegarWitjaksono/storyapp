@@ -5,6 +5,8 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatEditText
+import androidx.appcompat.content.res.AppCompatResources
+import com.dicoding.picodiploma.loginwithanimation.R
 import com.google.android.material.textfield.TextInputLayout
 
 class CustomEditText @JvmOverloads constructor(
@@ -12,12 +14,12 @@ class CustomEditText @JvmOverloads constructor(
 ) : AppCompatEditText(context, attrs, defStyleAttr) {
 
     init {
-        // Set gravity to center vertically to match typical email input
         gravity = android.view.Gravity.CENTER_VERTICAL
+        background = AppCompatResources.getDrawable(context, R.drawable.rounded_button)
 
         addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // Tidak perlu diimplementasikan
+                // No implementation needed
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
@@ -25,14 +27,16 @@ class CustomEditText @JvmOverloads constructor(
                 if (parent is TextInputLayout) {
                     if (s.toString().length < 8) {
                         parent.error = "Password tidak boleh kurang dari 8 karakter"
+                        background = AppCompatResources.getDrawable(context, R.drawable.rounded_button_red) // Set red border
                     } else {
-                        parent.error = null // Menghilangkan pesan error
+                        parent.error = null
+                        background = AppCompatResources.getDrawable(context, R.drawable.rounded_button) // Reset to normal border
                     }
                 }
             }
 
             override fun afterTextChanged(s: Editable?) {
-                // Tidak perlu diimplementasikan
+                // No implementation needed
             }
         })
     }
