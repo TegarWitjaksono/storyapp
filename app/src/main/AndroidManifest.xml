@@ -57,6 +57,10 @@
 
         <activity android:name=".view.detail.DetailStoryActivity" />
         <activity android:name=".view.addstory.AddStoryActivity" />
+        <activity
+            android:name=".view.profile.ProfileActivity"
+            android:exported="true"
+            android:label="My Profile" />
     </application>
 
 </manifest>

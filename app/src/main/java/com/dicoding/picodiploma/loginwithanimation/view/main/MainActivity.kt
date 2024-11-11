@@ -22,6 +22,7 @@ import com.dicoding.picodiploma.loginwithanimation.view.detail.DetailStoryActivi
 import com.dicoding.picodiploma.loginwithanimation.view.maps.MapsActivity
 import com.dicoding.picodiploma.loginwithanimation.view.maps.adapter.LoadingStateAdapter
 import com.dicoding.picodiploma.loginwithanimation.view.maps.adapter.StoryPagingDataAdapter
+import com.dicoding.picodiploma.loginwithanimation.view.profile.ProfileActivity // Import ProfileActivity
 import com.dicoding.picodiploma.loginwithanimation.view.welcome.WelcomeActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.flow.collectLatest
@@ -41,14 +42,33 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
+        // Setup BottomNavigationView
+        binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.action_home -> {
+                    // Home sudah di MainActivity, tidak perlu melakukan apa-apa
+                    true
+                }
+                R.id.action_add_story -> {
+                    val intent = Intent(this, AddStoryActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.action_profile -> {
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
+        }
+
         viewModel.getSession().observe(this) { user ->
             if (!user.isLogin) {
                 startActivity(Intent(this, WelcomeActivity::class.java))
                 finish()
             } else {
                 setupView(user)
-                setupAction()
-                setupFab()
                 getPagedStories(user.token)
             }
         }
@@ -98,22 +118,6 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.adapter = storyAdapter.withLoadStateFooter(
             footer = LoadingStateAdapter { storyAdapter.retry() }
         )
-    }
-
-    private fun setupAction() {
-        binding.logoutButton.setOnClickListener {
-            viewModel.logout()
-            startActivity(Intent(this, WelcomeActivity::class.java))
-            finish()
-        }
-    }
-
-    private fun setupFab() {
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener {
-            val intent = Intent(this, AddStoryActivity::class.java)
-            startActivity(intent)
-        }
     }
 
     private fun getPagedStories(token: String) {
